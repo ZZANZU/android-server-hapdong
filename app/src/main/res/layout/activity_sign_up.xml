@@ -12,7 +12,7 @@
 
 
     <EditText
-        android:id="@+id/signup_id_btn"
+        android:id="@+id/signup_id_edit"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:inputType="textEmailAddress"
@@ -24,7 +24,7 @@
 
     <EditText
         android:layout_marginTop="50dp"
-        android:id="@+id/signup_pw_btn"
+        android:id="@+id/signup_pw_edit"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:inputType="textPassword"
@@ -35,7 +35,7 @@
         />
 
     <Button
-        android:id="@+id/sign_complete_btn"
+        android:id="@+id/sign_complete_edit"
         android:layout_marginTop="80dp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
