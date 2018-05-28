@@ -35,7 +35,7 @@
         />
 
     <Button
-        android:id="@+id/sign_complete_edit"
+        android:id="@+id/sign_complete_btn"
         android:layout_marginTop="80dp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
