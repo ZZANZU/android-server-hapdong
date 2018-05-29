@@ -12,38 +12,43 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
-
+    lateinit var networkService: NetworkService
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        lateinit var networkService: NetworkService
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         networkService = ApplicationController.instance.networkService
+
+        login_check_btn.setOnClickListener {
+            postSignIn()
+        }
+
+        login_signup_btn.setOnClickListener {
+            val nextIntent = Intent(this, SignUpActivity::class.java)
+            startActivity(nextIntent)
+        }
+    }
+
+    fun postSignIn() {
         val user_id = RequestBody.create(MediaType.parse("signin"), login_id_edi.text.toString())
         val user_pwd = RequestBody.create(MediaType.parse("signin"), login_pw_edi.text.toString())
+
         val postSigninResponse = networkService.postSignup(user_id, user_pwd)
 
-        val intent = Intent(Intent.ACTION_PICK)
         postSigninResponse.enqueue(object : Callback<SignupResponse> {
             override fun onFailure(call: Call<SignupResponse>?, t: Throwable?) {
 
             }
 
             override fun onResponse(call: Call<SignupResponse>?, response: Response<SignupResponse>?) {
-                login_check_btn.setOnClickListener {
+                if(response!!.isSuccessful) {
                     startActivity(Intent(applicationContext, MainActivity::class.java))
+                    finish()
                 }
+
             }
 
         })
-
-
-        login_signup_btn.setOnClickListener {
-            val nextIntent = Intent(this, SignUpActivity::class.java)
-            startActivity(nextIntent)
-        }
     }
 }
