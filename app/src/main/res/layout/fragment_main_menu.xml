@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_alignParentTop="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        >
+
+        <LinearLayout
+            android:id="@+id/main_menu_hansik"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/grey"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="한식"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_menu_chicken"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/grey"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="치킨"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        >
+
+        <LinearLayout
+            android:id="@+id/main_menu_pizza"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/grey"
+            android:layout_marginRight="30dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="피자"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_menu_yasik"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/grey"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="야식"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
