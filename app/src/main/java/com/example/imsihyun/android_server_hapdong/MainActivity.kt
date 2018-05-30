@@ -29,20 +29,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             main_bookmark_btn -> {
                 replaceFragment(MainBookmarkFragment())
             }
-
-
-            main_menu_hansik -> {
-                replaceFragment(MainMenuHansikFragment())
-            }
-            main_menu_chicken -> {
-                replaceFragment(MainMenuChickenFragment())
-            }
-            main_menu_pizza -> {
-                replaceFragment(MainMenuPizzaFragment())
-            }
-            main_menu_yasik -> {
-                replaceFragment(MainMenuYasikFragment())
-            }
         }
     }
 

@@ -5,20 +5,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_menu_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        >
+
+        <TextView
+            android:id="@+id/main_toolbar_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="메인"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            />
+
+    </android.support.v7.widget.Toolbar>
 
     <FrameLayout
         android:id="@+id/main_menu_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/main_tab"
+        android:layout_below="@id/main_menu_toolbar"
         />
 
     <RelativeLayout
+        android:id="@+id/main_tab"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_alignParentBottom="true"
-        android:id="@+id/main_tab"
         android:background="@color/grey"
         >
 
@@ -35,7 +57,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_background"
+                android:src="@drawable/ic_home_black_24dp"
                 />
 
             <View
