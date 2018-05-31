@@ -3,4 +3,5 @@
     <string name="app_name_1">로그인</string>
     <string name="app_name_2">회원가입</string>
     <string name="app_name_3">메인</string>
+    <string name="app_name_null"> </string>
 </resources>
