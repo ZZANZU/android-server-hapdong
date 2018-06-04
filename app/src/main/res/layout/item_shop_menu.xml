@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingLeft="12dp"
+    android:layout_marginBottom="12dp"
+    >
+
+    <!--가게 이미지-->
+    <ImageView
+        android:id="@+id/shop_img"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/like_img"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        >
+
+        <!--가게 이름-->
+        <TextView
+            android:id="@+id/shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shop Name"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <!--리뷰 점수-->
+        <TextView
+            android:id="@+id/shop_review_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="review_count"
+            />
+
+        <!--가게 설명-->
+        <TextView
+            android:id="@+id/shop_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shop Content"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
