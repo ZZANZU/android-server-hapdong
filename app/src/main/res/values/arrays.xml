@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner">
+        <item >치킨</item>
+        <item >한식</item>
+        <item >야식</item>
+        <item >피자</item>
+    </string-array>
+</resources>
