@@ -19,10 +19,10 @@ class MainMenuFragment: Fragment(), View.OnClickListener {
         val mView = inflater.inflate(R.layout.fragment_main_menu, container, false)
 
         mToolBar = activity!!.main_menu_toolbar
-        mToolBar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp)
-        mToolBar.setNavigationOnClickListener({
-            startActivity(Intent(activity!!.applicationContext, MainActivity::class.java))
-        })
+//        mToolBar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp)
+//        mToolBar.setNavigationOnClickListener({
+//            startActivity(Intent(activity!!.applicationContext, MainActivity::class.java))
+//        })
 
         mView.main_menu_hansik.setOnClickListener(this)
         mView.main_menu_chicken.setOnClickListener(this)
