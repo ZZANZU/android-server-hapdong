@@ -23,7 +23,32 @@ interface NetworkService {
             @Field("user_pw") user_pwd : RequestBody
     ) : Call<SigninResponse>
 
+    // 샵 등록하기
+    @Multipart
+    @POST("register/shop")
+    fun postRegister (
+            @Part("shop_name")     shop_name            : RequestBody,
+            @Part("shop_category") shop_category        : RequestBody,
+            @Part("shop_content")  shop_content         : RequestBody,
+            @Part registerImag                                : MultipartBody.Part?,
+            @Part("shop_info")     shop_info            : RequestBody,
+            @Part("menu_name")     menu_name            : RequestBody,
+            @Part("menu_price")    menu_price           : RequestBody
+    ) : Call<RegisterResponse>
+
     // 가게(샵) 목록 불러오기, 테스트를 위해 한식만 불러옴
+    @GET("shop/1")
+    fun getShopContent() : Call<GetShopResponse>
+
+
+    // 가게(샵) 메뉴 불러오기
+    @FormUrlEncoded
+    @POST("shop/menu")
+    fun postShopMenu (
+            @Field("shop_name")  shop_name  : RequestBody,
+            @Field("shop_price") shop_price : RequestBody
+    ) : Call<PostShopResponse>
+
     @GET("shop/{shop_category}")
     fun getShopContent(@Path("shop_category") shopCategory : Int) : Call<GetShopResponse>
 }
