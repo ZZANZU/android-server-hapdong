@@ -10,7 +10,7 @@
     tools:context=".ShopActivity">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/register_toolbar"
+        android:id="@+id/shop_toolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/colorPrimary"
