@@ -36,19 +36,47 @@ class MainMenuFragment: Fragment(), View.OnClickListener {
         when(v) {
             main_menu_hansik -> {
                 mToolBar.main_toolbar_tv.setText("한식")
-                replaceFragment(MainMenuHansikFragment())
+
+                var hansikFragment: Fragment = MainMenuShopListFragment()
+                var bundle: Bundle = Bundle()
+                bundle.putInt("shop category", 1)
+
+                hansikFragment.arguments = bundle
+
+                replaceFragment(hansikFragment)
             }
             main_menu_chicken -> {
                 mToolBar.main_toolbar_tv.setText("치킨")
-                replaceFragment(MainMenuChickenFragment())
+
+                var chickenFragment: Fragment = MainMenuShopListFragment()
+                var bundle: Bundle = Bundle()
+                bundle.putInt("shop category", 2)
+
+                chickenFragment.arguments = bundle
+
+                replaceFragment(chickenFragment)
             }
             main_menu_pizza -> {
                 mToolBar.main_toolbar_tv.setText("피자")
-                replaceFragment(MainMenuPizzaFragment())
+
+                var pizzaFragment: Fragment = MainMenuShopListFragment()
+                var bundle: Bundle = Bundle()
+                bundle.putInt("shop category", 3)
+
+                pizzaFragment.arguments = bundle
+
+                replaceFragment(pizzaFragment)
             }
             main_menu_yasik -> {
                 mToolBar.main_toolbar_tv.setText("야식")
-                replaceFragment(MainMenuYasikFragment())
+
+                var yasikFragment: Fragment = MainMenuShopListFragment()
+                var bundle: Bundle = Bundle()
+                bundle.putInt("shop category", 4)
+
+                yasikFragment.arguments = bundle
+
+                replaceFragment(yasikFragment)
             }
 //            main_menu_toolbar -> {
 //                startActivity(Intent(activity!!.applicationContext, MainActivity::class.java))

@@ -16,7 +16,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainMenuYasikFragment: Fragment() {
+class MainMenuShopListFragment: Fragment() {
     lateinit var networkService : NetworkService
     lateinit var requestManager : RequestManager
 
@@ -29,24 +29,29 @@ class MainMenuYasikFragment: Fragment() {
         networkService = ApplicationController.instance.networkService
         requestManager = Glide.with(this.activity)
 
-        val getShopResponse = networkService.getShopContent(4)
-        getShopResponse.enqueue(object : Callback<GetShopResponse> {
-            override fun onFailure(call: Call<GetShopResponse>?, t: Throwable?) {
-                Log.d("ZZANZU", "getting shop data / failure")
-            }
+        if(arguments!!.getInt("shop category") != null) {
+            var shopCategory = arguments!!.getInt("shop category")
 
-            override fun onResponse(call: Call<GetShopResponse>?, response: Response<GetShopResponse>?) {
-                if(response!!.isSuccessful) {
-                    mShopItems = response.body().data
-                    mMenuShopAdapter = MenuShopAdapter(mShopItems, requestManager)
-
-                    shop_list_rv.adapter = mMenuShopAdapter
-                    shop_list_rv.layoutManager = LinearLayoutManager(activity!!.applicationContext)
+            val getShopResponse = networkService.getShopContent(shopCategory)
+            getShopResponse.enqueue(object : Callback<GetShopResponse> {
+                override fun onFailure(call: Call<GetShopResponse>?, t: Throwable?) {
+                    Log.d("ZZANZU", "getting shop data / failure")
                 }
-            }
 
-        })
+                override fun onResponse(call: Call<GetShopResponse>?, response: Response<GetShopResponse>?) {
+                    if(response!!.isSuccessful) {
+                        mShopItems = response.body().data
+                        mMenuShopAdapter = MenuShopAdapter(mShopItems, requestManager)
+
+                        shop_list_rv.adapter = mMenuShopAdapter
+                        shop_list_rv.layoutManager = LinearLayoutManager(activity!!.applicationContext)
+                    }
+                }
+
+            })
+        }
 
         return mView
+
     }
 }
