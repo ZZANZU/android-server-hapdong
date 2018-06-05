@@ -1,4 +1,4 @@
-package com.example.imsihyun.android_server_hapdong
+package com.example.imsihyun.android_server_hapdong.frag
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.imsihyun.android_server_hapdong.MainActivity
+import com.example.imsihyun.android_server_hapdong.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.fragment_main_menu.*

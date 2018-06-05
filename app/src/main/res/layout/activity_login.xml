@@ -12,9 +12,7 @@
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorPrimary"
-        >
-
+        android:background="@color/colorPrimary" >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,44 +21,50 @@
             android:textColor="@color/white"
             android:layout_gravity="center"
             />
-
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="80dp"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        >
+        android:paddingTop="80dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
             <ImageView
                 android:id="@+id/login_logo_img"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerInParent="true"
-                android:src="@drawable/ic_launcher_background"
+                android:layout_gravity="center"
+                android:background="@drawable/main_button_background"
                 />
 
-
-        </RelativeLayout>
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="솝트 로고"/>
+        
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <EditText
-            android:layout_marginTop="50dp"
             android:id="@+id/login_id_edi"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:inputType="textEmailAddress"
             android:ems="15"
-            android:hint="id"
+            android:hint="아이디"
             android:padding="8dp"
             android:background="@layout/rounded_border_edittext"
             />
@@ -71,12 +75,13 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:inputType="textPassword"
-            android:hint="password"
+            android:hint="비밀번호"
             android:ems="10"
             android:padding="8dp"
             android:background="@layout/rounded_border_edittext"
             />
 
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

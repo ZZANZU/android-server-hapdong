@@ -1,4 +1,4 @@
-package com.example.imsihyun.android_server_hapdong
+package com.example.imsihyun.android_server_hapdong.frag
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -9,7 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
-import com.example.imsihyun.android_server_hapdong.data.ShopInfo
+import com.example.imsihyun.android_server_hapdong.ApplicationController
+import com.example.imsihyun.android_server_hapdong.MenuShopAdapter
+import com.example.imsihyun.android_server_hapdong.NetworkService
+import com.example.imsihyun.android_server_hapdong.R
 import com.example.imsihyun.android_server_hapdong.get.GetShopResponse
 import com.example.imsihyun.android_server_hapdong.get.GetShopResponseData
 import kotlinx.android.synthetic.main.fragment_main_hansik.*

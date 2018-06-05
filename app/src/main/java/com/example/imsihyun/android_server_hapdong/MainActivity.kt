@@ -4,10 +4,9 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.View
-import com.example.imsihyun.android_server_hapdong.R.layout.fragment_main_menu
+import com.example.imsihyun.android_server_hapdong.frag.MainBookmarkFragment
+import com.example.imsihyun.android_server_hapdong.frag.MainMenuFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_main_menu.*
-import kotlinx.android.synthetic.main.fragment_main_menu.view.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
