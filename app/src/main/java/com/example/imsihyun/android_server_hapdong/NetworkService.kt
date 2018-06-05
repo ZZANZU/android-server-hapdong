@@ -24,6 +24,6 @@ interface NetworkService {
     ) : Call<SigninResponse>
 
     // 가게(샵) 목록 불러오기, 테스트를 위해 한식만 불러옴
-    @GET("shop/1")
-    fun getShopContent() : Call<GetShopResponse>
+    @GET("shop/{shop_category}")
+    fun getShopContent(@Path("shop_category") shopCategory : Int) : Call<GetShopResponse>
 }
