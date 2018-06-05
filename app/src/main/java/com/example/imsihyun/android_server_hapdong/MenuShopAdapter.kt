@@ -1,23 +1,28 @@
 package com.example.imsihyun.android_server_hapdong
 
-import android.app.Activity
-import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
-import com.example.imsihyun.android_server_hapdong.data.ShopInfo
+import com.example.imsihyun.android_server_hapdong.get.GetShopResponse
 import com.example.imsihyun.android_server_hapdong.get.GetShopResponseData
-import kotlin.coroutines.experimental.coroutineContext
+import retrofit2.Callback
 
 class MenuShopAdapter(var shopItems : ArrayList<GetShopResponseData>, var requestManager: RequestManager)
     : RecyclerView.Adapter<MenuShopViewHolder>() {
 
+    lateinit var onItemClick : View.OnClickListener // 액션 변수
+
+    fun setOnItemClickListener(l: View.OnClickListener) {
+        onItemClick = l // 액션 함수
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuShopViewHolder {
         val mainView : View = LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_shop_menu, parent, false)
+
+        mainView.setOnClickListener(onItemClick) // 아이템 클릭
 
         return MenuShopViewHolder(mainView)
     }

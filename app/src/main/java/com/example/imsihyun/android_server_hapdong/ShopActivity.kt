@@ -28,9 +28,8 @@ class ShopActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop)
 
-//        val toolbar     = findViewById(R.id.register_toolbar) as Toolbar
-//
-//        setSupportActionBar(toolbar)
+        shop_name_tv.text = intent.getStringExtra("name")
+
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
 
         mToolBar = shop_toolbar
