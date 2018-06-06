@@ -9,6 +9,11 @@
     android:orientation="vertical"
     tools:context=".ShopActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가게 상세 정보임다"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/shop_rv"
         android:layout_width="match_parent"
