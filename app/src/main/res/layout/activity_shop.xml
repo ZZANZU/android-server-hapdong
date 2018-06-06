@@ -18,6 +18,7 @@
         >
 
         <TextView
+            android:id="@+id/shop_name_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="가게 이름"

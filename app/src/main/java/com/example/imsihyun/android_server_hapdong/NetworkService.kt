@@ -1,11 +1,12 @@
 package com.example.imsihyun.android_server_hapdong
 
+import com.example.imsihyun.android_server_hapdong.post.RegisterResponse
 import com.example.imsihyun.android_server_hapdong.get.GetShopResponse
 import com.example.imsihyun.android_server_hapdong.post.PostShopResponse
-import com.example.imsihyun.android_server_hapdong.post.RegisterResponse
 import com.example.imsihyun.android_server_hapdong.post.SigninResponse
 import com.example.imsihyun.android_server_hapdong.post.SignupResponse
 import okhttp3.MultipartBody
+import okhttp3.Request
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -39,11 +40,6 @@ interface NetworkService {
             @Part("menu_price")    menu_price           : RequestBody
     ) : Call<RegisterResponse>
 
-    // 가게(샵) 목록 불러오기, 테스트를 위해 한식만 불러옴
-    @GET("shop/1")
-    fun getShopContent() : Call<GetShopResponse>
-
-
     // 가게(샵) 메뉴 불러오기
     @FormUrlEncoded
     @POST("shop/menu")
@@ -54,4 +50,5 @@ interface NetworkService {
 
     @GET("shop/{shop_category}")
     fun getShopContent(@Path("shop_category") shopCategory : Int) : Call<GetShopResponse>
+
 }

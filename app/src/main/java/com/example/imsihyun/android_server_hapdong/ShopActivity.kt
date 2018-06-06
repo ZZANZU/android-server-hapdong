@@ -28,15 +28,15 @@ class ShopActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop)
 
-//        val toolbar     = findViewById(R.id.register_toolbar) as Toolbar
-//
-//        setSupportActionBar(toolbar)
+        shop_name_tv.text = intent.getStringExtra("name")
+
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
 
         mToolBar = shop_toolbar
         mToolBar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp)
         mToolBar.setNavigationOnClickListener({
-            startActivity(Intent(this, MainActivity::class.java))
+            this.finish()
+            // startActivity(Intent(this, MainActivity::class.java))
         })
 
         container.adapter = mSectionsPagerAdapter

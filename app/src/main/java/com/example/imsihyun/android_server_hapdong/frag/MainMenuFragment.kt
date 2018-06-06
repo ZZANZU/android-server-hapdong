@@ -4,14 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.Toolbar
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.imsihyun.android_server_hapdong.MainActivity
-import com.example.imsihyun.android_server_hapdong.MainMenuShopListFragment
 import com.example.imsihyun.android_server_hapdong.R
-import com.example.imsihyun.android_server_hapdong.RegisterActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.fragment_main_menu.*
@@ -35,7 +32,6 @@ class MainMenuFragment: Fragment(), View.OnClickListener {
         mView.main_menu_chicken.setOnClickListener(this)
         mView.main_menu_pizza.setOnClickListener(this)
         mView.main_menu_yasik.setOnClickListener(this)
-        activity!!.shop_register_btn.setOnClickListener(this)
 
         return mView
     }
