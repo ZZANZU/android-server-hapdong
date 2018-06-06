@@ -4,11 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.Toolbar
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.imsihyun.android_server_hapdong.MainActivity
+import com.example.imsihyun.android_server_hapdong.MainMenuShopListFragment
 import com.example.imsihyun.android_server_hapdong.R
+import com.example.imsihyun.android_server_hapdong.RegisterActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.fragment_main_menu.*
@@ -26,10 +29,13 @@ class MainMenuFragment: Fragment(), View.OnClickListener {
 //            startActivity(Intent(activity!!.applicationContext, MainActivity::class.java))
 //        })
 
+        activity!!.shop_register_btn.visibility = View.GONE
+
         mView.main_menu_hansik.setOnClickListener(this)
         mView.main_menu_chicken.setOnClickListener(this)
         mView.main_menu_pizza.setOnClickListener(this)
         mView.main_menu_yasik.setOnClickListener(this)
+        activity!!.shop_register_btn.setOnClickListener(this)
 
         return mView
     }
@@ -38,6 +44,7 @@ class MainMenuFragment: Fragment(), View.OnClickListener {
         when(v) {
             main_menu_hansik -> {
                 mToolBar.main_toolbar_tv.setText("한식")
+                activity!!.shop_register_btn.visibility = View.VISIBLE
 
                 var hansikFragment: Fragment = MainMenuShopListFragment()
                 var bundle: Bundle = Bundle()
@@ -49,6 +56,7 @@ class MainMenuFragment: Fragment(), View.OnClickListener {
             }
             main_menu_chicken -> {
                 mToolBar.main_toolbar_tv.setText("치킨")
+                activity!!.shop_register_btn.visibility = View.VISIBLE
 
                 var chickenFragment: Fragment = MainMenuShopListFragment()
                 var bundle: Bundle = Bundle()
@@ -60,6 +68,7 @@ class MainMenuFragment: Fragment(), View.OnClickListener {
             }
             main_menu_pizza -> {
                 mToolBar.main_toolbar_tv.setText("피자")
+                activity!!.shop_register_btn.visibility = View.VISIBLE
 
                 var pizzaFragment: Fragment = MainMenuShopListFragment()
                 var bundle: Bundle = Bundle()
@@ -71,6 +80,7 @@ class MainMenuFragment: Fragment(), View.OnClickListener {
             }
             main_menu_yasik -> {
                 mToolBar.main_toolbar_tv.setText("야식")
+                activity!!.shop_register_btn.visibility = View.VISIBLE
 
                 var yasikFragment: Fragment = MainMenuShopListFragment()
                 var bundle: Bundle = Bundle()
@@ -80,9 +90,10 @@ class MainMenuFragment: Fragment(), View.OnClickListener {
 
                 replaceFragment(yasikFragment)
             }
-//            main_menu_toolbar -> {
-//                startActivity(Intent(activity!!.applicationContext, MainActivity::class.java))
-//            }
+            activity!!.shop_register_btn -> {
+                startActivity(Intent(activity!!.applicationContext, RegisterActivity::class.java))
+                Log.d("ZZANZU", "register button clicked")
+            }
         }
     }
 
