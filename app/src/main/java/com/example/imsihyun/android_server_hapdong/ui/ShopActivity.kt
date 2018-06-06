@@ -1,6 +1,5 @@
-package com.example.imsihyun.android_server_hapdong
+package com.example.imsihyun.android_server_hapdong.ui
 
-import android.content.Intent
 import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v4.app.Fragment
@@ -8,16 +7,11 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.os.Bundle
 import android.support.v7.widget.Toolbar
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-import com.example.imsihyun.android_server_hapdong.frag.ShopMenuFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.imsihyun.android_server_hapdong.R
 
 import kotlinx.android.synthetic.main.activity_shop.*
-import kotlinx.android.synthetic.main.fragment_shop.view.*
 
 class ShopActivity : AppCompatActivity() {
     lateinit var mToolBar: Toolbar
@@ -39,12 +33,14 @@ class ShopActivity : AppCompatActivity() {
             // startActivity(Intent(this, MainActivity::class.java))
         })
 
+        var shopName: String = intent.getStringExtra("shop_name")
+        mToolBar.setTitle(shopName)
+        mToolBar.setTitleTextColor(resources.getColor(R.color.white))
+
         container.adapter = mSectionsPagerAdapter
 
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
         tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
-
-
     }
 
 
