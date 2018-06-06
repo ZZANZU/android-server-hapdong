@@ -1,10 +1,12 @@
-package com.example.imsihyun.android_server_hapdong
+package com.example.imsihyun.android_server_hapdong.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.RequestManager
+import com.example.imsihyun.android_server_hapdong.viewholder.MenuShopViewHolder
+import com.example.imsihyun.android_server_hapdong.R
 import com.example.imsihyun.android_server_hapdong.get.GetShopResponseData
 
 

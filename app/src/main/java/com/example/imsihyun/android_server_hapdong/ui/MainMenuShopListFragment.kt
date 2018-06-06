@@ -1,4 +1,4 @@
-package com.example.imsihyun.android_server_hapdong
+package com.example.imsihyun.android_server_hapdong.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,13 +6,13 @@ import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.Toolbar
 import android.util.Log
-import android.view.*
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
+import com.example.imsihyun.android_server_hapdong.*
+import com.example.imsihyun.android_server_hapdong.adapter.MenuShopAdapter
 import com.example.imsihyun.android_server_hapdong.get.GetShopResponse
 import com.example.imsihyun.android_server_hapdong.get.GetShopResponseData
 import kotlinx.android.synthetic.main.activity_main.*

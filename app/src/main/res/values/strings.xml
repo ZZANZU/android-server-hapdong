@@ -1,9 +1,5 @@
 <resources>
-    <string name="app_name">android_server_hapdong</string>
-    <string name="app_name_1">로그인</string>
-    <string name="app_name_2">회원가입</string>
-    <string name="app_name_3">메인</string>
-    <string name="app_name_null"> </string>
+    <string name="app_name">SOPT_10조</string>
     <string name="title_activity_shop_info">ShopInfoActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
