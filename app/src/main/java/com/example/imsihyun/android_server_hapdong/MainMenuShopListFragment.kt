@@ -17,7 +17,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainMenuShopListFragment: Fragment(), View.OnClickListener {
+class MainMenuShopListFragment: Fragment() {
     lateinit var networkService : NetworkService
     lateinit var requestManager : RequestManager
 
@@ -30,13 +30,20 @@ class MainMenuShopListFragment: Fragment(), View.OnClickListener {
         networkService = ApplicationController.instance.networkService
         requestManager = Glide.with(this.activity)
 
-        mMenuShopAdapter.setOnItemClickListener(this) // 아이템 클릭
-
         if(arguments!!.getInt("shop category") != null) {
             var shopCategory = arguments!!.getInt("shop category")
 
             val getShopResponse = networkService.getShopContent(shopCategory)
-            getShopResponse.enqueue(object : Callback<GetShopResponse> {
+            getShopResponse.enqueue(object : Callback<GetShopResponse>, View.OnClickListener {
+                override fun onClick(v: View?) {
+                    val idx : Int = shop_list_rv.getChildAdapterPosition(v)
+                    val shop_name : String = mShopItems[idx].shop_name
+
+                    val intent : Intent = Intent(activity!!.applicationContext, ShopActivity::class.java)
+                    intent.putExtra("shop_name", shop_name)
+                    startActivity(intent)
+                }
+
                 override fun onFailure(call: Call<GetShopResponse>?, t: Throwable?) {
                     Log.d("ZZANZU", "getting shop data / failure")
                 }
@@ -45,6 +52,7 @@ class MainMenuShopListFragment: Fragment(), View.OnClickListener {
                     if(response!!.isSuccessful) {
                         mShopItems = response.body().data
                         mMenuShopAdapter = MenuShopAdapter(mShopItems, requestManager)
+                        mMenuShopAdapter.setOnItemClickListener(this) // 아이템 클릭
 
                         shop_list_rv.adapter = mMenuShopAdapter
                         shop_list_rv.layoutManager = LinearLayoutManager(activity!!.applicationContext)
@@ -55,14 +63,5 @@ class MainMenuShopListFragment: Fragment(), View.OnClickListener {
         }
         return mView
 
-    }
-
-    override fun onClick(v: View?) {
-        val idx : Int = shop_list_rv.getChildAdapterPosition(v)
-        val shop_name : String = mShopItems[idx].shop_name
-
-        val intent : Intent = Intent(activity!!.applicationContext, ShopActivity::class.java)
-        intent.putExtra("shop_name", shop_name)
-        startActivity(intent)
     }
 }

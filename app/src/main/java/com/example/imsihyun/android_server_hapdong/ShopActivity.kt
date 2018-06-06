@@ -35,7 +35,8 @@ class ShopActivity : AppCompatActivity() {
         mToolBar = shop_toolbar
         mToolBar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp)
         mToolBar.setNavigationOnClickListener({
-            startActivity(Intent(this, MainActivity::class.java))
+            this.finish()
+            // startActivity(Intent(this, MainActivity::class.java))
         })
 
         container.adapter = mSectionsPagerAdapter

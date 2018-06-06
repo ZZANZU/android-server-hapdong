@@ -5,14 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.RequestManager
-import com.example.imsihyun.android_server_hapdong.get.GetShopResponse
 import com.example.imsihyun.android_server_hapdong.get.GetShopResponseData
-import retrofit2.Callback
+
 
 class MenuShopAdapter(var shopItems : ArrayList<GetShopResponseData>, var requestManager: RequestManager)
     : RecyclerView.Adapter<MenuShopViewHolder>() {
 
-    lateinit var onItemClick : View.OnClickListener // 액션 변수
+     lateinit var onItemClick : View.OnClickListener // 액션 변수
 
     fun setOnItemClickListener(l: View.OnClickListener) {
         onItemClick = l // 액션 함수
@@ -22,7 +21,7 @@ class MenuShopAdapter(var shopItems : ArrayList<GetShopResponseData>, var reques
         val mainView : View = LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_shop_menu, parent, false)
 
-        mainView.setOnClickListener(onItemClick) // 아이템 클릭
+         mainView.setOnClickListener(onItemClick) // 아이템 클릭
 
         return MenuShopViewHolder(mainView)
     }
