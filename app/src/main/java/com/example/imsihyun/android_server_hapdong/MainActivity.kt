@@ -1,8 +1,12 @@
 package com.example.imsihyun.android_server_hapdong
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import com.example.imsihyun.android_server_hapdong.frag.MainBookmarkFragment
 import com.example.imsihyun.android_server_hapdong.frag.MainMenuFragment
@@ -15,6 +19,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
 
         addFragment(MainMenuFragment())
+
+        shop_register_btn.visibility = View.GONE
 
         main_home_btn.setOnClickListener(this)
         main_bookmark_btn.setOnClickListener(this)
