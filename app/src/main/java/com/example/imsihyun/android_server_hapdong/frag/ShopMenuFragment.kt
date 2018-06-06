@@ -34,26 +34,24 @@ class ShopMenuFragment : Fragment() {
         networkService = ApplicationController.instance.networkService
         requestManager = Glide.with(this.activity)
 
-        // java.lang.IllegalStateException: menu_name_tv must not be null
-        // 프래그먼트랑 xml 렌더링 X
-        val shop_name  = RequestBody.create(MediaType.parse("text/plain"), menu_name_tv.text.toString())
-        val shop_price = RequestBody.create(MediaType.parse("text/plain"), menu_price_tv.text.toString())
-        val postShop = networkService.postShopMenu(shop_name, shop_price)
+//        val shop_name  = RequestBody.create(MediaType.parse("text/plain"), menu_name_tv.text.toString())
+//        val shop_price = RequestBody.create(MediaType.parse("text/plain"), menu_price_tv.text.toString())
+//        val postShop = networkService.postShopMenu(shop_name, shop_price)
 
-        postShop.enqueue(object : Callback<PostShopResponse> {
-            override fun onFailure(call: Call<PostShopResponse>?, t: Throwable?) {
-            }
-
-            override fun onResponse(call: Call<PostShopResponse>?, response: Response<PostShopResponse>?) {
-                if(response!!.isSuccessful) {
-                    ShopMenuItems = response.body().data
-                    menuNameAdapter = MenuNameAdapter(ShopMenuItems, requestManager)
-
-                    shop_rv.adapter = menuNameAdapter
-                    shop_rv.layoutManager = LinearLayoutManager(activity!!.applicationContext)
-                }
-            }
-        })
+//        postShop.enqueue(object : Callback<PostShopResponse> {
+//            override fun onFailure(call: Call<PostShopResponse>?, t: Throwable?) {
+//            }
+//
+//            override fun onResponse(call: Call<PostShopResponse>?, response: Response<PostShopResponse>?) {
+//                if(response!!.isSuccessful) {
+//                    ShopMenuItems = response.body().data
+//                    menuNameAdapter = MenuNameAdapter(ShopMenuItems, requestManager)
+//
+//                    shop_rv.adapter = menuNameAdapter
+//                    shop_rv.layoutManager = LinearLayoutManager(activity!!.applicationContext)
+//                }
+//            }
+//        })
         return rootView
     }
 
